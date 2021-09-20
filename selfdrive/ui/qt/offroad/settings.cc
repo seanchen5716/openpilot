@@ -35,45 +35,45 @@ TogglesPanel::TogglesPanel(QWidget *parent) : QWidget(parent) {
   QList<ParamControl*> toggles;
 
   toggles.append(new ParamControl("OpenpilotEnabledToggle",
-                                  "오픈파일럿 사용",
+                                  "啟用OPENPILOT",
                                   "어댑티브 크루즈 컨트롤 및 차선 유지 지원을 위해 오픈파일럿 시스템을 사용하십시오. 이 기능을 사용하려면 항상 주의를 기울여야 합니다. 이 설정을 변경하는 것은 자동차의 전원이 꺼졌을 때 적용됩니다.",
                                   "../assets/offroad/icon_openpilot.png",
                                   this));
   toggles.append(new ParamControl("IsLdwEnabled",
-                                  "차선이탈 경보 사용",
+                                  "車道偏離警告",
                                   "50km/h이상의 속도로 주행하는 동안 방향 지시등이 활성화되지 않은 상태에서 차량이 감지된 차선 위를 넘어갈 경우 원래 차선으로 다시 방향을 전환하도록 경고를 보냅니다.",
                                   "../assets/offroad/icon_warning.png",
                                   this));
   toggles.append(new ParamControl("IsRHD",
-                                  "우핸들 운전방식 사용",
+                                  "啟用右駕",
                                   "오픈파일럿이 좌측 교통 규칙을 준수하도록 허용하고 우측 운전석에서 운전자 모니터링을 수행하십시오.",
                                   "../assets/offroad/icon_openpilot_mirrored.png",
                                   this));
   toggles.append(new ParamControl("IsMetric",
-                                  "미터법 사용",
+                                  "使用公制",
                                   "mi/h 대신 km/h 단위로 속도를 표시합니다.",
                                   "../assets/offroad/icon_metric.png",
                                   this));
   toggles.append(new ParamControl("CommunityFeaturesToggle",
-                                  "커뮤니티 기능 사용",
+                                  "啟用社區功能",
                                   "comma.ai에서 유지 또는 지원하지 않고 표준 안전 모델에 부합하는 것으로 확인되지 않은 오픈 소스 커뮤니티의 기능을 사용하십시오. 이러한 기능에는 커뮤니티 지원 자동차와 커뮤니티 지원 하드웨어가 포함됩니다. 이러한 기능을 사용할 때는 각별히 주의해야 합니다.",
                                   "../assets/offroad/icon_shell.png",
                                   this));
 
   toggles.append(new ParamControl("UploadRaw",
-                                  "주행 로그 업로드",
+                                  "Upload Raw Logs",
                                   "업로드 프로세스 활성화 시 모든 로그 및 풀 해상도 비디오를 업로드합니다.(WiFi 사용중에만 작동) 기능이 꺼진 경우, my.comma.ai/useradmin에 업로드를 위해 개별 로그는 기록될 수 있습니다.",
                                  "../assets/offroad/icon_network.png",
                                  this));
 
   ParamControl *record_toggle = new ParamControl("RecordFront",
-                                                 "운전자 영상 녹화 및 업로드",
+                                                 "上傳錄影",
                                                  "운전자 모니터링 카메라에서 데이터를 업로드하고 운전자 모니터링 알고리즘을 개선하십시오.",
                                                  "../assets/offroad/icon_monitoring.png",
                                                  this);
   toggles.append(record_toggle);
   toggles.append(new ParamControl("EndToEndToggle",
-                                  "차선 비활성화 모드 (알파)",
+                                  "不使用車道辨識模式 (alpha)",
                                   "이 모드에서 오픈파일럿은 차선을 따라 주행하지 않고 사람이 운전하는 것 처럼 주행합니다.",
                                   "../assets/offroad/icon_road.png",
                                   this));
@@ -87,22 +87,22 @@ TogglesPanel::TogglesPanel(QWidget *parent) : QWidget(parent) {
 #endif
 
   toggles.append(new ParamControl("OpkrEnableDriverMonitoring",
-                                  "운전자 모니터링 사용",
+                                  "啟用駕駛監控",
                                   "운전자 감시 모니터링을 사용합니다.",
                                   "../assets/offroad/icon_shell.png",
                                   this));
   toggles.append(new ParamControl("OpkrEnableLogger",
-                                  "주행로그 기록 사용",
+                                  "啟用記錄與上傳",
                                   "로컬에서 데이터 분석을 위해 주행로그를 기록합니다. 로거만 활성화 되며 서버로 업로드 되지 않습니다.",
                                   "../assets/offroad/icon_shell.png",
                                   this));
   toggles.append(new ParamControl("OpkrEnableUploader",
-                                  "주행로그 서버 전송",
+                                  "上傳至伺服器",
                                   "시스템로그 및 기타 주행데이터를 서버로 전송하기 위해 업로드 프로세스를 활성화 합니다. 오프로드 상태에서만 업로드 합니다.",
                                   "../assets/offroad/icon_shell.png",
                                   this));
   toggles.append(new ParamControl("CommaStockUI",
-                                  "Comma Stock UI 사용",
+                                  "啟用Comma Stock UI",
                                   "주행화면을 콤마의 순정 UI를 사용합니다. 주행화면 좌측상단의 박스를 눌러도 실시간 전환 가능합니다.",
                                   "../assets/offroad/icon_shell.png",
                                   this));
@@ -129,14 +129,14 @@ DevicePanel::DevicePanel(QWidget* parent) : QWidget(parent) {
 
   // offroad-only buttons
 
-  auto dcamBtn = new ButtonControl("운전자 영상", "미리보기",
+  auto dcamBtn = new ButtonControl("駕駛鏡頭", "預覽",
                                         "운전자 모니터링 카메라를 미리 보고 장치 장착 위치를 최적화하여 최상의 운전자 모니터링 환경을 제공하십시오. (차량이 꺼져 있어야 합니다.)");
   connect(dcamBtn, &ButtonControl::clicked, [=]() { emit showDriverView(); });
 
   QString resetCalibDesc = "오픈파일럿을 사용하려면 장치를 왼쪽 또는 오른쪽으로 4°, 위 또는 아래로 5° 이내에 장착해야 합니다. 오픈파일럿이 지속적으로 보정되고 있으므로 재설정할 필요가 거의 없습니다.";
-  auto resetCalibBtn = new ButtonControl("캘리브레이션 초기화", "실행", resetCalibDesc);
+  auto resetCalibBtn = new ButtonControl("重新校正", "校正", resetCalibDesc);
   connect(resetCalibBtn, &ButtonControl::clicked, [=]() {
-    if (ConfirmationDialog::confirm("캘리브레이션을 초기화 하시겠습니까? 자동 재부팅됩니다.", this)) {
+    if (ConfirmationDialog::confirm("確定要重新校正？將會重新啟動機器", this)) {
       Params().remove("CalibrationParams");
       Params().remove("LiveParameters");
       QTimer::singleShot(1000, []() {
@@ -168,9 +168,9 @@ DevicePanel::DevicePanel(QWidget* parent) : QWidget(parent) {
 
   ButtonControl *retrainingBtn = nullptr;
   if (!params.getBool("Passive")) {
-    retrainingBtn = new ButtonControl("트레이닝가이드 보기", "다시보기", "오픈파일럿에 대한 규칙, 기능, 제한내용 등을 확인하세요.");
+    retrainingBtn = new ButtonControl("重看訓練指南", "查看", "오픈파일럿에 대한 규칙, 기능, 제한내용 등을 확인하세요.");
     connect(retrainingBtn, &ButtonControl::clicked, [=]() {
-      if (ConfirmationDialog::confirm("트레이닝 가이드를 다시 확인하시겠습니까?", this)) {
+      if (ConfirmationDialog::confirm("您想查看訓練指南嗎？", this)) {
         Params().remove("CompletedTrainingVersion");
         emit reviewTrainingGuide();
       }
@@ -208,20 +208,20 @@ DevicePanel::DevicePanel(QWidget* parent) : QWidget(parent) {
   QHBoxLayout *power_layout = new QHBoxLayout();
   power_layout->setSpacing(30);
 
-  QPushButton *reboot_btn = new QPushButton("재시작");
+  QPushButton *reboot_btn = new QPushButton("重新啟動");
   reboot_btn->setObjectName("reboot_btn");
   power_layout->addWidget(reboot_btn);
   QObject::connect(reboot_btn, &QPushButton::clicked, [=]() {
-    if (ConfirmationDialog::confirm("재시작하시겠습니까?", this)) {
+    if (ConfirmationDialog::confirm("確定要重新啟動嗎？", this)) {
       Hardware::reboot();
     }
   });
 
-  QPushButton *poweroff_btn = new QPushButton("전원끄기");
+  QPushButton *poweroff_btn = new QPushButton("關機");
   poweroff_btn->setObjectName("poweroff_btn");
   power_layout->addWidget(poweroff_btn);
   QObject::connect(poweroff_btn, &QPushButton::clicked, [=]() {
-    if (ConfirmationDialog::confirm("전원을 끄시겠습니까?", this)) {
+    if (ConfirmationDialog::confirm("確定要關機嗎？", this)) {
       Hardware::poweroff();
     }
   });
@@ -245,8 +245,8 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
   gitCommitLbl = new LabelControl("Git Commit");
   osVersionLbl = new LabelControl("OS Version");
   versionLbl = new LabelControl("Version");
-  lastUpdateLbl = new LabelControl("최근업데이트 확인", "", "");
-  updateBtn = new ButtonControl("업데이트 체크 및 적용", "");
+  lastUpdateLbl = new LabelControl("檢查是否有新版本", "", "");
+  updateBtn = new ButtonControl("檢查並更新", "");
   connect(updateBtn, &ButtonControl::clicked, [=]() {
     if (params.getBool("IsOffroad")) {
       const QString paramsPath = QString::fromStdString(params.getParamsPath());
@@ -260,14 +260,14 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
     QString commit_local = QString::fromStdString(Params().get("GitCommit").substr(0, 10));
     QString commit_remote = QString::fromStdString(Params().get("GitCommitRemote").substr(0, 10));
     QString empty = "";
-    desc += QString("로    컬: %1\n리모트: %2%3%4\n").arg(commit_local, commit_remote, empty, empty);
+    desc += QString("本機: %1\n遠程: %2%3%4\n").arg(commit_local, commit_remote, empty, empty);
     
     if (!last_ping.length()) {
-      desc += QString("인터넷에 연결되어 있지 않습니다. 업데이트확인을 위해 WiFi를 연결하세요.");
+      desc += QString("沒有網路，請連接網路並執行檢查");
     } else if (commit_local == commit_remote) {
-      desc += QString("로컬과 리모트가 일치합니다. 업데이트가 필요 없습니다.");
+      desc += QString("本機與遠端版本相同，無需更新");
     } else {
-      desc += QString("업데이트가 있습니다. 적용하려면 확인버튼을 누르세요.");
+      desc += QString("有更新，請按下確定按鈕執行更新");
     }
     if (ConfirmationDialog::confirm(desc, this)) {
       std::system("/data/openpilot/selfdrive/assets/addon/script/gitpull.sh");
@@ -281,9 +281,9 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
     main_layout->addWidget(horizontal_line());
   }
 
-  auto uninstallBtn = new ButtonControl(getBrand() + " 제거", "제거");
+  auto uninstallBtn = new ButtonControl(getBrand() + " 刪除", "刪除");
   connect(uninstallBtn, &ButtonControl::clicked, [=]() {
-    if (ConfirmationDialog::confirm("제거하시겠습니까?", this)) {
+    if (ConfirmationDialog::confirm("您確定要刪除嗎？", this)) {
       Params().putBool("DoUninstall", true);
     }
   });
@@ -301,20 +301,20 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
   QHBoxLayout *presetone_layout = new QHBoxLayout();
   presetone_layout->setSpacing(50);
 
-  QPushButton *presetoneload_btn = new QPushButton("프리셋1 불러오기");
+  QPushButton *presetoneload_btn = new QPushButton("載入預設1");
   presetoneload_btn->setStyleSheet("height: 120px;border-radius: 15px;background-color: #393939;");
   presetone_layout->addWidget(presetoneload_btn);
   QObject::connect(presetoneload_btn, &QPushButton::clicked, [=]() {
-    if (ConfirmationDialog::confirm("프리셋1을 불러올까요?", this)) {
+    if (ConfirmationDialog::confirm("是否載入預設1", this)) {
       QProcess::execute("/data/openpilot/selfdrive/assets/addon/script/load_preset1.sh");
     }
   });
 
-  QPushButton *presetonesave_btn = new QPushButton("프리셋1 저장하기");
+  QPushButton *presetonesave_btn = new QPushButton("預設1存檔");
   presetonesave_btn->setStyleSheet("height: 120px;border-radius: 15px;background-color: #393939;");
   presetone_layout->addWidget(presetonesave_btn);
   QObject::connect(presetonesave_btn, &QPushButton::clicked, [=]() {
-    if (ConfirmationDialog::confirm("프리셋1을 저장할까요?", this)) {
+    if (ConfirmationDialog::confirm("是否要存檔至預設1？", this)) {
       QProcess::execute("/data/openpilot/selfdrive/assets/addon/script/save_preset1.sh");
     }
   });
@@ -323,27 +323,27 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
   QHBoxLayout *presettwo_layout = new QHBoxLayout();
   presettwo_layout->setSpacing(50);
 
-  QPushButton *presettwoload_btn = new QPushButton("프리셋2 불러오기");
+  QPushButton *presettwoload_btn = new QPushButton("載入預設2");
   presettwoload_btn->setStyleSheet("height: 120px;border-radius: 15px;background-color: #393939;");
   presettwo_layout->addWidget(presettwoload_btn);
   QObject::connect(presettwoload_btn, &QPushButton::clicked, [=]() {
-    if (ConfirmationDialog::confirm("프리셋2을 불러올까요?", this)) {
+    if (ConfirmationDialog::confirm("是否載入預設2", this)) {
       QProcess::execute("/data/openpilot/selfdrive/assets/addon/script/load_preset2.sh");
     }
   });
 
-  QPushButton *presettwosave_btn = new QPushButton("프리셋2 저장하기");
+  QPushButton *presettwosave_btn = new QPushButton("預設2存檔");
   presettwosave_btn->setStyleSheet("height: 120px;border-radius: 15px;background-color: #393939;");
   presettwo_layout->addWidget(presettwosave_btn);
   QObject::connect(presettwosave_btn, &QPushButton::clicked, [=]() {
-    if (ConfirmationDialog::confirm("프리셋2을 저장할까요?", this)) {
+    if (ConfirmationDialog::confirm("是否存檔至預設2？", this)) {
       QProcess::execute("/data/openpilot/selfdrive/assets/addon/script/save_preset2.sh");
     }
   });
 
-  auto paraminit_btn = new ButtonControl("파라미터 초기화", "실행");
+  auto paraminit_btn = new ButtonControl("參數初始化", "執行");
   QObject::connect(paraminit_btn, &ButtonControl::clicked, [=]() {
-    if (ConfirmationDialog::confirm("파라미터를 초기화 합니다. 이온 메뉴의 각종 변경값들이 최초 설정된 값으로 바뀝니다. 진행하시겠습니까?", this)){
+    if (ConfirmationDialog::confirm("確定將參數恢復為初始狀態嗎？", this)){
       QProcess::execute("/data/openpilot/selfdrive/assets/addon/script/init_param.sh");
     }
   });
@@ -358,9 +358,9 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
   main_layout->addWidget(horizontal_line());
 
   const char* git_reset = "/data/openpilot/selfdrive/assets/addon/script/git_reset.sh ''";
-  auto gitresetbtn = new ButtonControl("Git Reset", "실행");
+  auto gitresetbtn = new ButtonControl("Git Reset", "執行");
   QObject::connect(gitresetbtn, &ButtonControl::clicked, [=]() {
-    if (ConfirmationDialog::confirm("로컬변경사항을 강제 초기화 후 리모트Git의 최신 커밋내역을 적용합니다. 진행하시겠습니까?", this)){
+    if (ConfirmationDialog::confirm("強制將本機修改的值初始化，並更新至遠端最新版本", this)){
       std::system(git_reset);
     }
   });
@@ -369,9 +369,9 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
   main_layout->addWidget(horizontal_line());
 
   const char* gitpull_cancel = "/data/openpilot/selfdrive/assets/addon/script/gitpull_cancel.sh ''";
-  auto gitpullcanceltbtn = new ButtonControl("Git Pull 취소", "실행");
+  auto gitpullcanceltbtn = new ButtonControl("取消Git Pull", "執行");
   QObject::connect(gitpullcanceltbtn, &ButtonControl::clicked, [=]() {
-    if (ConfirmationDialog::confirm("GitPull 이전 상태로 되돌립니다. 진행하시겠습니까?", this)){
+    if (ConfirmationDialog::confirm("恢復至Git Pull之前的狀態，確定要執行嗎？", this)){
       std::system(gitpull_cancel);
     }
   });
@@ -380,9 +380,9 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
   main_layout->addWidget(horizontal_line());
 
   const char* panda_flashing = "/data/openpilot/selfdrive/assets/addon/script/panda_flashing.sh ''";
-  auto pandaflashingtbtn = new ButtonControl("판다 플래싱", "실행");
+  auto pandaflashingtbtn = new ButtonControl("更新熊貓", "執行");
   QObject::connect(pandaflashingtbtn, &ButtonControl::clicked, [=]() {
-    if (ConfirmationDialog::confirm("판다플래싱 진행중에는 판다의 녹색LED가 빠르게 깜빡입니다. 절대로 장치의 전원을 끄거나 임의로 분리하지 마십시오. 진행하시겠습니까?", this)) {
+    if (ConfirmationDialog::confirm("更新熊貓的期間，將快速閃爍綠燈，切勿斷開電源或強制關機，要繼續執行嗎？", this)) {
       std::system(panda_flashing);
     }
   });
@@ -401,7 +401,7 @@ SoftwarePanel::SoftwarePanel(QWidget* parent) : QWidget(parent) {
     int update_failed_count = params.get<int>("UpdateFailedCount").value_or(0);
     if (path.contains("UpdateFailedCount") && update_failed_count > 0) {
       lastUpdateLbl->setText("failed to fetch update");
-      updateBtn->setText("확인");
+      updateBtn->setText("確定");
       updateBtn->setEnabled(true);
     } else if (path.contains("LastUpdateTime")) {
       updateLabels();
@@ -422,7 +422,7 @@ void SoftwarePanel::updateLabels() {
 
   versionLbl->setText(getBrandVersion());
   lastUpdateLbl->setText(lastUpdate);
-  updateBtn->setText("확인");
+  updateBtn->setText("確定");
   updateBtn->setEnabled(true);
   gitRemoteLbl->setText(QString::fromStdString(params.get("GitRemote").substr(19)));
   gitBranchLbl->setText(QString::fromStdString(params.get("GitBranch")));
@@ -437,12 +437,12 @@ QWidget * network_panel(QWidget * parent) {
   layout->setSpacing(30);
 
   // wifi + tethering buttons
-  auto wifiBtn = new ButtonControl("WiFi 설정", "열기");
+  auto wifiBtn = new ButtonControl("WiFi設定", "打開");
   QObject::connect(wifiBtn, &ButtonControl::clicked, [=]() { HardwareEon::launch_wifi(); });
   layout->addWidget(wifiBtn);
   layout->addWidget(horizontal_line());
 
-  auto tetheringBtn = new ButtonControl("테더링 설정", "열기");
+  auto tetheringBtn = new ButtonControl("網路分享", "打開");
   QObject::connect(tetheringBtn, &ButtonControl::clicked, [=]() { HardwareEon::launch_tethering(); });
   layout->addWidget(tetheringBtn);
   layout->addWidget(horizontal_line());
@@ -469,7 +469,7 @@ UserPanel::UserPanel(QWidget* parent) : QWidget(parent) {
   QVBoxLayout *layout = new QVBoxLayout(this);
 
   // OPKR
-  layout->addWidget(new LabelControl("UI설정", ""));
+  layout->addWidget(new LabelControl("UI設定", ""));
   layout->addWidget(new AutoShutdown());
   layout->addWidget(new ForceShutdown());
   //layout->addWidget(new AutoScreenDimmingToggle());
@@ -486,17 +486,17 @@ UserPanel::UserPanel(QWidget* parent) : QWidget(parent) {
   layout->addWidget(new RecordCount());
   layout->addWidget(new RecordQuality());
   const char* record_del = "rm -f /storage/emulated/0/videos/*";
-  auto recorddelbtn = new ButtonControl("녹화파일 전부 삭제", "실행");
+  auto recorddelbtn = new ButtonControl("刪除所有記錄檔案", "執行");
   QObject::connect(recorddelbtn, &ButtonControl::clicked, [=]() {
-    if (ConfirmationDialog::confirm("저장된 녹화파일을 모두 삭제합니다. 진행하시겠습니까?", this)){
+    if (ConfirmationDialog::confirm("你確定要刪除所有記錄檔案嗎？", this)){
       std::system(record_del);
     }
   });
   layout->addWidget(recorddelbtn);
   const char* realdata_del = "rm -rf /storage/emulated/0/realdata/*";
-  auto realdatadelbtn = new ButtonControl("주행로그 전부 삭제", "실행");
+  auto realdatadelbtn = new ButtonControl("刪除所有執行記錄", "執行");
   QObject::connect(realdatadelbtn, &ButtonControl::clicked, [=]() {
-    if (ConfirmationDialog::confirm("저장된 주행로그를 모두 삭제합니다. 진행하시겠습니까?", this)){
+    if (ConfirmationDialog::confirm("你確定要刪除所有執行記錄嗎？", this)){
       std::system(realdata_del);
     }
   });
@@ -510,7 +510,7 @@ UserPanel::UserPanel(QWidget* parent) : QWidget(parent) {
   layout->addWidget(new KRTimeToggle());
 
   layout->addWidget(horizontal_line());
-  layout->addWidget(new LabelControl("주행설정", ""));
+  layout->addWidget(new LabelControl("行駛設定", ""));
   layout->addWidget(new AutoResumeToggle());
   layout->addWidget(new VariableCruiseToggle());
   layout->addWidget(new VariableCruiseProfile());
@@ -538,7 +538,7 @@ UserPanel::UserPanel(QWidget* parent) : QWidget(parent) {
   layout->addWidget(new MadModeEnabledToggle());
 
   layout->addWidget(horizontal_line());
-  layout->addWidget(new LabelControl("개발자", ""));
+  layout->addWidget(new LabelControl("開發者設定", ""));
   layout->addWidget(new DebugUiOneToggle());
   layout->addWidget(new DebugUiTwoToggle());
   layout->addWidget(new LongLogToggle());
@@ -552,7 +552,7 @@ UserPanel::UserPanel(QWidget* parent) : QWidget(parent) {
   layout->addWidget(new SteerWarningFixToggle());
   layout->addWidget(new BattLessToggle());
   const char* cal_ok = "cp -f /data/openpilot/selfdrive/assets/addon/param/CalibrationParams /data/params/d/";
-  auto calokbtn = new ButtonControl("캘리브레이션 강제 활성화", "실행");
+  auto calokbtn = new ButtonControl("強制校正", "執行");
   QObject::connect(calokbtn, &ButtonControl::clicked, [=]() {
     if (ConfirmationDialog::confirm("캘리브레이션을 강제로 설정합니다. 인게이지 확인용이니 실 주행시에는 초기화 하시기 바랍니다.", this)){
       std::system(cal_ok);
@@ -567,13 +567,13 @@ UserPanel::UserPanel(QWidget* parent) : QWidget(parent) {
   //layout->addWidget(new LabelControl(car_model, ""));
 
   layout->addWidget(horizontal_line());
-  layout->addWidget(new LabelControl("판다 세이프티 값", ""));
+  layout->addWidget(new LabelControl("PANDA值", ""));
   layout->addWidget(new MaxSteer());
   layout->addWidget(new MaxRTDelta());
   layout->addWidget(new MaxRateUp());
   layout->addWidget(new MaxRateDown());
   const char* p_edit_go = "/data/openpilot/selfdrive/assets/addon/script/p_edit.sh ''";
-  auto peditbtn = new ButtonControl("판다값 변경 적용", "실행");
+  auto peditbtn = new ButtonControl("PANDA值修改", "執行");
   QObject::connect(peditbtn, &ButtonControl::clicked, [=]() {
     if (ConfirmationDialog::confirm("변경된 판다값을 적용합니다. 진행하시겠습니까? 자동 재부팅됩니다.", this)){
       std::system(p_edit_go);
@@ -586,7 +586,7 @@ TuningPanel::TuningPanel(QWidget* parent) : QWidget(parent) {
   QVBoxLayout *layout = new QVBoxLayout(this);
 
   // OPKR
-  layout->addWidget(new LabelControl("튜닝메뉴", ""));
+  layout->addWidget(new LabelControl("調整目錄", ""));
   layout->addWidget(new CameraOffset());
   layout->addWidget(new PathOffset());
   layout->addWidget(new LiveSteerRatioToggle());
@@ -610,7 +610,7 @@ TuningPanel::TuningPanel(QWidget* parent) : QWidget(parent) {
 
   layout->addWidget(horizontal_line());
 
-  layout->addWidget(new LabelControl("제어메뉴", ""));
+  layout->addWidget(new LabelControl("控制項目", ""));
   layout->addWidget(new LateralControl());
   layout->addWidget(new LiveTunePanelToggle());
   QString lat_control = QString::fromStdString(Params().get("LateralControlMethod", false));
@@ -634,7 +634,7 @@ TuningPanel::TuningPanel(QWidget* parent) : QWidget(parent) {
 
   layout->addWidget(horizontal_line());
 
-  layout->addWidget(new LabelControl("롱컨트롤메뉴", ""));
+  layout->addWidget(new LabelControl("縱向駕駛控制", ""));
   layout->addWidget(new DynamicTR());
   layout->addWidget(new CruiseGapTR());
   layout->addWidget(new RadarLongHelperToggle());
@@ -685,12 +685,12 @@ SettingsWindow::SettingsWindow(QWidget *parent) : QFrame(parent) {
   QObject::connect(device, &DevicePanel::showDriverView, this, &SettingsWindow::showDriverView);
 
   QList<QPair<QString, QWidget *>> panels = {
-    {"장치", device},
-    {"네트워크", network_panel(this)},
-    {"토글메뉴", new TogglesPanel(this)},
-    {"소프트웨어", new SoftwarePanel(this)},
-    {"사용자설정", new UserPanel(this)},
-    {"튜닝", new TuningPanel(this)},
+    {"本機", device},
+    {"網路", network_panel(this)},
+    {"切換功能", new TogglesPanel(this)},
+    {"版本", new SoftwarePanel(this)},
+    {"使用者設定", new UserPanel(this)},
+    {"調整", new TuningPanel(this)},
   };
 
   sidebar_layout->addSpacing(43);
