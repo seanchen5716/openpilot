@@ -539,7 +539,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, Callable[[Any, messaging.SubMaster, boo
   
   EventName.laneChangeManual: {
     ET.WARNING: Alert(
-      "低速行駛中，請手動轉方向盤,
+      "低速行駛中，請手動轉方向盤",
       "暫停自動變換車道功能，請自行駕駛",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .0, .1, .1, alert_rate=0.75),
