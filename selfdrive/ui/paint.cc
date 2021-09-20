@@ -1022,7 +1022,7 @@ static void bb_ui_draw_UI(UIState *s) {
 }
 
 static void draw_navi_button(UIState *s) {
-  if (s->vipc_client->connected || s->scene.is_OpenpilotViewEnabled) {
+  /*if (s->vipc_client->connected || s->scene.is_OpenpilotViewEnabled) {
     int btn_w = 140;
     int btn_h = 140;
     int btn_x1 = s->fb_w - btn_w - 355;
@@ -1043,7 +1043,7 @@ static void draw_navi_button(UIState *s) {
     }
     nvgFillColor(s->vg, nvgRGBA(255,255,255,200));
     nvgText(s->vg,btn_xc1,btn_yc,"NAVI",NULL);
-  }
+  }*/
 }
 
 static void draw_laneless_button(UIState *s) {
