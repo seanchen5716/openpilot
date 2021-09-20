@@ -331,7 +331,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, Callable[[Any, messaging.SubMaster, boo
 
   EventName.startupNoFw: {
     ET.PERMANENT: Alert(
-      "車輛無法識別,
+      "車輛無法識別",
       "檢查所有線路連接",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOWER, VisualAlert.none, AudibleAlert.none, 0., 0., 15.),
